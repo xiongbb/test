@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: triage-call-center
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: ENC(BBv9X8aiBBovU1ZLSGi8CHam+EJeF/AC)
+    username: cisnew
+    jdbc-url: jdbc:sqlserver://192.168.130.168:1433;databaseName=hisdbth
+    max-active: 20
+    initial-size: 2
+    validation-query: select 1
+    test-while-idle: true
+    filters: stat
+    druid:
+      stat-view-servlet:
+        login-username: admin
+        login-password: admin123
+        allow: 127.0.0.1
+      filter:
+        stat:
+          log-slow-sql: true
+
+  rabbitmq:
+    host: 192.168.131.190
+    port: 5672
+    username: admin
+    password: admin123
+
+jasypt:
+  encryptor:
+    password: aA123456^%$#@!
+
+
+server:
+  port: 10086
+
+cxf:
+  path: /ws
+
+
+triagecall-expired-second: 600
